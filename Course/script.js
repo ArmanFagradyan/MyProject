@@ -125,3 +125,7 @@
 //     }
 //     console.log(i);
 // }
+
+function showFirstMessage (text) {
+    alert(text); 
+}
