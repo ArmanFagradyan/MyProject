@@ -126,6 +126,18 @@
 //     console.log(i);
 // }
 
+/* let num = 20;
+
 function showFirstMessage (text) {
     alert(text); 
+    console.log(num);
 }
+
+showFirstMessage("Hello world");
+console.log(num); */
+
+function calc(a,b) {
+    return(a + b);
+}
+console.log(calc(3,4));
+console.log(calc(5,6));
