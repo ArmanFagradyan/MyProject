@@ -144,10 +144,10 @@ console.log(num); */
 //     return(a + b);
 // }
 
-let calc = (a,b) => a + b;
+let calc = (a, b) => a + b;
 
-console.log(calc(3,4));
-console.log(calc(5,6));
+console.log(calc(3, 4));
+console.log(calc(5, 6));
 
 function retVar() {
     let num = 50;
