@@ -167,27 +167,52 @@ console.log(num); */
 // // console.log(Math.round(twelve));
 // console.log(parseInt(twelve));
 // console.log(parseFloat(twelve));
-function first() {
-    // Что-то делаем
-    setTimeout( function(){
-    console.log(1);
-    }, 500 );
+// function first() {
+//     // Что-то делаем
+//     setTimeout( function(){
+//     console.log(1);
+//     }, 500 );
+// }
+
+// function second() {
+//     console.log(2);
+// }
+// first();
+// second();
+
+
+// function learnJS(lang, callback) {
+//     console.log("Я учу " + lang);
+//     callback();
+// }
+
+// function done() {
+//     console.log("Я прошел третий урок");
+// }
+
+// learnJS("JavaScript", done);
+ 
+let options = {
+    width: 1024,
+    height: 1024,
+    name: "test"
+};
+
+console.log(options.name);
+options.bool = false;
+options.colors = {
+    border: "black",
+    background: "red"
+};
+
+delete options.bool;
+
+console.log(options);
+
+for (let key in options) {
+    console.log('Свойство ' + key + ' имеет значение ' + options[key]);
 }
 
-function second() {
-    console.log(2);
-}
-first();
-second();
+console.log(Object.keys(options).length);
 
 
-function learnJS(lang, callback) {
-    console.log("Я учу " + lang);
-    callback();
-}
-
-function done() {
-    console.log("Я прошел третий урок");
-}
-
-learnJS("JavaScript", done);
