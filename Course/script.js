@@ -192,28 +192,28 @@ console.log(num); */
 
 // learnJS("JavaScript", done);
  
-let options = {
-    width: 1024,
-    height: 1024,
-    name: "test"
-};
+// let options = {
+//     width: 1024,
+//     height: 1024,
+//     name: "test"
+// };
 
-console.log(options.name);
-options.bool = false;
-options.colors = {
-    border: "black",
-    background: "red"
-};
+// console.log(options.name);
+// options.bool = false;
+// options.colors = {
+//     border: "black",
+//     background: "red"
+// };
 
-delete options.bool;
+// delete options.bool;
 
-console.log(options);
+// console.log(options);
 
-for (let key in options) {
-    console.log('Свойство ' + key + ' имеет значение ' + options[key]);
-}
+// for (let key in options) {
+//     console.log('Свойство ' + key + ' имеет значение ' + options[key]);
+// }
 
-console.log(Object.keys(options).length);
+// console.log(Object.keys(options).length);
 
 // let arr = [1, 2, 3, 4, 5];
 
@@ -240,27 +240,27 @@ console.log(Object.keys(options).length);
 // arr = ans.split(',');
 // console.log(arr);
 
-let arr = [1, 2, 15 ,4],
-    i = arr.sort(compareNum);
+// let arr = [1, 2, 15 ,4],
+//     i = arr.sort(compareNum);
 
-function compareNum(a, b){
-    return a - b;
-}
+// function compareNum(a, b){
+//     return a - b;
+// }
 
-console.log(i);
+// console.log(i);
 
-let soldier = {
-    health: 400,
-    armor: 100
-};
+// let soldier = {
+//     health: 400,
+//     armor: 100
+// };
 
-let John = {
-    health: 100
-};
+// let John = {
+//     health: 100
+// };
 
-John.__proto__ = soldier;
-console.log(John);
-console.log(John.armor);
+// John.__proto__ = soldier;
+// console.log(John);
+// console.log(John.armor);
 
 
 
