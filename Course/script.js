@@ -264,3 +264,48 @@ console.log(num); */
 
 
 
+// - to String
+//1)
+// console.log(typeof(String(4)));
+
+// // 2)
+// console.log(typeof("q" + false));
+// console.log('http//vk.com/catalog/' + 5);
+
+// //To number
+// // 1)
+// console.log(typeof(Number('5')));
+// // 2) Унарный плюс
+// console.log(typeof(+'5'));
+
+// // 3)
+// console.log(typeof(parseInt('15px', 10)));
+
+// let ans = +prompt("Hello?", '');
+
+// 0, '', null, undefined, NaN
+
+// let switcher = null;
+
+// if (switcher){
+//     console.log("Working..");
+// }
+
+// switcher = 1;
+
+// if (switcher){
+//     console.log("Working..");
+// }
+
+
+// 2)
+// console.log(typeof(Boolean('5')));
+// // 3)
+// console.log(typeof(!!'5'));
+
+// let a = 1,
+//     b = 2;
+// console.log( null || 2 && 3 || 4 );
+// let y = 1; let x = y = 2; console.log(x);
+
+
