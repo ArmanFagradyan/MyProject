@@ -388,3 +388,17 @@ btn.forEach(function(item){
 //     alert('Вы навели на первую кнопку');
 // });
 
+// Хотим чтобы на клик выводился алерт
+
+// btn[0].onclick = function(){
+//     alert('Вы нажали на первую кнопку');
+// };
+
+// btn[0].onclick = function(){
+//     alert('Вы нажали на первую кнопку');
+// };
+
+// btn[0].addEventListener('mouseenter', function(){
+//     alert('Вы навели на первую кнопку');
+// });
+
