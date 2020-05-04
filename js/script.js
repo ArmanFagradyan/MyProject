@@ -20,7 +20,3 @@ btn.forEach(function(item){
         console.log("Вышли!");
     });
 });
-
-
-ghbdtn 
-gtgtg
