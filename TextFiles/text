@@ -803,6 +803,63 @@ ________________________________________________________________________________
     4) document.createTextNode - добавление новых текстовых узлов 
     5) document.createElement - метод принимает имя тега и возвращает новый пустой узел заданного типа.
 
+
+Примеры подразумевают эту структуру:
+        const box = document.getElementById('box'),
+            btns = document.getElementsByTagName('button'),
+            circles = document.getElementsByClassName('circle'),
+            wrapper = document.querySelector('.wrapper'),
+            hearts = wrapper.querySelectorAll('.heart'),
+            oneHeart = wrapper.querySelector('.heart');
+
+* Чтобы создать новый элемент внутри JS файла
+        const div = document.createElement('div');
+
+* Чтобы создать новый класс
+        div.classList.add('black'); 
+
+* Чтобы добавить элемент в конец какой-то структуры:
+        document.querySelector('.wrapper').append(div);
+
+* Чтобы добавить элемент в начало какой-то структуры:
+        document.querySelector('.wrapper').prepend(div);
+
+* Чтобы вставить перед первым указанным элементом:
+        hearts[0].before(div);
+
+* Чтобы вставить после первого указанного элемента:
+        hearts[0].after(div);
+    
+* Чтобы удалить элемент:
+        circles[0].remove();
+
+* Чтобы заменить первый указанный элемент вторым указанным элементом:
+        hearts[0].replaceWith(circles[0]);
+
+* Указанные выше методы, но в устаревшем формате:
+        wrapper.insertBefore(div, hearts[2]);
+        wrapper.removeChild(hearts[1]);
+        wrapper.replaceChild(circles[0], hearts[0]);
+
+* Втсавка HTML-элемента:
+        div.innerHTML = '<h1>Hello world</h1>';
+
+* Вставка текста, а не элемента, чтобы пользователь не смог поломать нам структуру:
+        div.textContent = 'hello';
+
+* вставка HTML-элемента перед самым первым указанным аргументом:
+        div.insertAdjacentHTML('beforebegin', '<h2>Hello</h2>');
+
+* вставка HTML-элемента в начало самого первого указанного аргументом:
+        div.insertAdjacentHTML('afterbegin', '<h2>Hello</h2>');
+
+* вставка HTML-элемента в в конец самого первого указанного аргументом:
+        div.insertAdjacentHTML('beforeend', '<h2>Hello</h2>');
+
+* вставка HTML-элемента после самого первого указанного аргументом:
+        div.insertAdjacentHTML('afterend', '<h2>Hello</h2>');
+
+
 ___________________________________________________________________________________________________________________________________________________________________________
 ___________________________________________________________________________________________________________________________________________________________________________
 ___________________________________________________________________________________________________________________________________________________________________________
