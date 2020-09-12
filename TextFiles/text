@@ -806,11 +806,11 @@ ________________________________________________________________________________
 
 Примеры подразумевают эту структуру:
         const box = document.getElementById('box'),
-            btns = document.getElementsByTagName('button'),
-            circles = document.getElementsByClassName('circle'),
-            wrapper = document.querySelector('.wrapper'),
-            hearts = wrapper.querySelectorAll('.heart'),
-            oneHeart = wrapper.querySelector('.heart');
+              btns = document.getElementsByTagName('button'),
+              circles = document.getElementsByClassName('circle'),
+              wrapper = document.querySelector('.wrapper'),
+              hearts = wrapper.querySelectorAll('.heart'),
+              oneHeart = wrapper.querySelector('.heart');
 
 * Чтобы создать новый элемент внутри JS файла
         const div = document.createElement('div');
