@@ -317,9 +317,9 @@ ________________________________________________________________________________
 /// Функции 
 
 Полезные ссылки: 
-    *  Про замыкание функций https://medium.com/nuances-of-programming/я-никогда-не-понимал-замыкания-в-javascript-часть-первая-3c3f02041970  
-    *  Про метод строк  https://learn.javascript.ru/string  
-    *  Про метод чисел https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number   
+        1) Про замыкание функций https://medium.com/nuances-of-programming/я-никогда-не-понимал-замыкания-в-javascript-часть-первая-3c3f02041970  
+        2) Про метод строк  https://learn.javascript.ru/string  
+        3) Про метод чисел https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number   
 
 Если по простому, то функции это наши действия в JS. Они используют различные тпиы данных и изменяют информацию так как мы укажем. 
 Для того чтобы задать функцию пишем: function затем пишем имя нашей новой функции, открываем круглые скобки для аргументов фукнции,
@@ -388,10 +388,10 @@ ________________________________________________________________________________
 ///Методы и свойства строк и чисел
 
 Полезные ссылки:
-        Методы строк: https://learn.javascript.ru/string
-        Методы чисел: https://learn.javascript.ru/number
-        Документация по числам: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number
-        Документация по строкам: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String
+        1) Методы строк: https://learn.javascript.ru/string
+        2) Методы чисел: https://learn.javascript.ru/number
+        3) Документация по числам: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number
+        4) Документация по строкам: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String
 
 
 * Методы - это вспомогательные функции, а Свойства - это вспомогательные значения.
@@ -453,10 +453,10 @@ ________________________________________________________________________________
 /// Объекты, деструктуризация объектов (ES6)
 
 Полезные ссылки:
-        Деструктуризация объектов: https://learn.javascript.ru/destructuring#destrukturizatsiya-obekta
-        Объекты JS в примерах: https://javascript.ru/tutorial/object/intro
-        Дескрипторы, геттеры и сеттеры: https://learn.javascript.ru/descriptors-getters-setters
-        Про for in: https://learn.javascript.ru/object-for-in
+        1) Деструктуризация объектов: https://learn.javascript.ru/destructuring#destrukturizatsiya-obekta
+        2) Объекты JS в примерах: https://javascript.ru/tutorial/object/intro
+        3) Дескрипторы, геттеры и сеттеры: https://learn.javascript.ru/descriptors-getters-setters
+        4) Про for in: https://learn.javascript.ru/object-for-in
 
 * Любой объект содержит пару ключ/значение
 Пример объекта: 
@@ -502,9 +502,9 @@ ________________________________________________________________________________
 /// Массивы и псевдомассивы 
 
 * Полезные ссылки:
-        Массивы: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array
-        Алгоритм быстрой сортировки: http://algolist.ru/sort/quick_sort.php
-        Отличие for-of от for-in: http://coldfox.ru/article/5c7ffe64bbf20e61c12c7348/Отличие-for-of-от-for-in-в-javascript
+        1) Массивы: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array
+        2) Алгоритм быстрой сортировки: http://algolist.ru/sort/quick_sort.php
+        3) Отличие for-of от for-in: http://coldfox.ru/article/5c7ffe64bbf20e61c12c7348/Отличие-for-of-от-for-in-в-javascript
 
 * Массивы = это структуры, которые содержат элементы по порядку. Например набор функций, или массив со смешанными данными.
 Пример массива: 
@@ -568,9 +568,9 @@ ________________________________________________________________________________
 ///Передача по ссылке или по значению, Spread оператор (ES6-ES9)
 
 Полезные ссылки: 
-        Статья про клонирование: https://medium.com/@stasonmars/копирование-объектов-в-javascript-d25c261a7aff
-        Object.assign(): https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
-        Spread operator: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+        1) Статья про клонирование: https://medium.com/@stasonmars/копирование-объектов-в-javascript-d25c261a7aff
+        2) Object.assign(): https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+        3) Spread operator: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Spread_syntax
 
 * При работе с примитивными типами данных(строки, числа, логические значения), они передаются по значению, проще говоря, когда мы присваиваем одну переменную к другой, то 
 идет присвоение не самой переменной, а ее значения.
@@ -671,10 +671,10 @@ ________________________________________________________________________________
 ///Объектно Ориентированное Программирование (ООП), прототипно-ориентированное наследование
 
 Полезные ссылки: 
-        Конструкторы, создание объектов через new: https://learn.javascript.ru/constructor-new
-        Классы: https://learn.javascript.ru/classes
-        Про __proto__: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/proto
-        Наследование без __proto__: https://javascript.info/prototype-methods
+        1) Конструкторы, создание объектов через new: https://learn.javascript.ru/constructor-new
+        2) Классы: https://learn.javascript.ru/classes
+        3) Про __proto__: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/proto
+        4) Наледование без __proto__: https://javascript.info/prototype-methods
 
 * Теперь главную роль играют не функции, а объекты. ООП - простыми словами, у нас есть объект прототип, и изменяя его параметры, мы создаем новые объекты.
 Например, прототип модельного окна, на основе которого мы создаем новые. Объект является прототипом для всего остального. Свойство _proto_ показывает 
@@ -717,7 +717,7 @@ ________________________________________________________________________________
 /// Динамическая типизация в JS 
 
 Полезные ссылки: 
-    Статическая и динамическая типизация: https://habr.com/ru/post/308484/
+    1) Статическая и динамическая типизация: https://habr.com/ru/post/308484/
 
 * Типов данных 7 штук, они делятся на простые и комплексные(объекты). Числами мы оперделяем колличественные данные. Булииновые тпы данных (лоигческие), то есть true и false.
 Null это то, чего впринципе не существует. Undefined - это когда что-то сущетсвует, но не имеет никакого значения. 
@@ -769,8 +769,8 @@ ________________________________________________________________________________
 /// Получение элементов со страницы
 
 Полезные ссылки:
-                Про селекторы: https://learn.javascript.ru/css-selectors
-                О псевдомассивах: https://habr.com/ru/post/336136/
+                1) Про селекторы: https://learn.javascript.ru/css-selectors
+                2) О псевдомассивах: https://habr.com/ru/post/336136/
                 
 Способы получения элементов:
     1) Через ID: document.getElementById
@@ -869,6 +869,10 @@ ________________________________________________________________________________
     2) Метод EventTarget.addEventListener(): https://developer.mozilla.org/ru/docs/Web/API/EventTarget/addEventListener
     3) Даты в JS: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Date
     4) Про disabled: https://www.w3schools.com/tags/att_disabled.asp
+    5) Простой список событий: https://oddler.ru/blog/i63
+    6) Справочнико по событиям: https://developer.mozilla.org/ru/docs/Web/Events
+    7) Объект события: https://developer.mozilla.org/ru/docs/Web/API/Event
+    8) Метод EventTarget.removeEventListener(): https://developer.mozilla.org/ru/docs/Web/API/EventTarget/removeEventListener
 
 * Событие - это сигнал от браузера что что-то произошло. 
 * Обработчик события - это функция, которая срабатывает как только событие произошло. 
@@ -881,16 +885,49 @@ ________________________________________________________________________________
     2) Использовать свойства DOM для событий: 
     При использовани данного способа мы можем назначить лишь одну функцию на один элемент. То есть более новая функция заменяет старую.
 
+            const button = document.querySelector('button');
+
+            button.onclick = function() {
+                alert('Click');
+            };
+
     3) Использовать методы addEventListener и removeEventListener:
     Данный способ решает проблему из предыдущего способа задачи обработчика событий 
+
+            button.addEventListener('mouseenter', (event) => {
+                console.log(event.target);
+                event.target.remove();
+            });
     
 
 * Для того, чтобы отменить некоторые действия браузера можно использовать команду preventDefault.
 
 * Как правильно устанавливать один обработчик события для нескольких элементов: использовать метод forEach
 
-так же см ScrapPaper (строки: 353 - 389);
+* Свойство target показывает тот элемент, который используется обработчиком событий. 
 
+* Всплытие событий - когда действие сначала срабатывает на вложенном элемете, а лишь потом на родительском. Например, когда для таких элементов используется один и тот же 
+  обработчик событий.
+
+
+* Чтобы отменить станлартное поведение браузера, например, чтобы при клике на мышке не было перехода по ней, иожно использовать данный метод (preventDefault) обработчика событий:
+
+            const link = document.querySelector('a');
+
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                console.log(event.target);
+            });
+
+
+* Для того чтобы навесить один обработчик событий на несколько элеметов сразу, необходимо перебрать все элементы псевдомассива и назначить им этот обработчик.
+
+            btns.forEach(btn => {
+                btn.addEventListener('click', deleteElement);
+            });
+
+так же см ScrapPaper (строки: 353 - 389);
 ___________________________________________________________________________________________________________________________________________________________________________
 ___________________________________________________________________________________________________________________________________________________________________________
 ___________________________________________________________________________________________________________________________________________________________________________
