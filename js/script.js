@@ -43,27 +43,27 @@
 
 
 
-const btn = document.querySelector('.btn');
-let timerId,
-    i = 0;
+// const btn = document.querySelector('.btn');
+// let timerId,
+//     i = 0;
 
-function myAnimation() {
-    const element = document.querySelector('.box');
-    let pos = 0;
+// function myAnimation() {
+//     const element = document.querySelector('.box');
+//     let pos = 0;
 
-    const id = setInterval(frame, 100);
-    function frame() {
-        if (pos == 300) {
-            clearInterval(id);
-        } else { 
-            pos++;
-            element.style.top = pos + "px";
-            element.style.left = pos + "px"; 
-        }
-    }
-}
+//     const id = setInterval(frame, 100);
+//     function frame() {
+//         if (pos == 300) {
+//             clearInterval(id);
+//         } else { 
+//             pos++;
+//             element.style.top = pos + "px";
+//             element.style.left = pos + "px"; 
+//         }
+//     }
+// }
 
-btn.addEventListener('click', myAnimation);
+// btn.addEventListener('click', myAnimation);
 
 
 // function logger () {
@@ -79,3 +79,29 @@ btn.addEventListener('click', myAnimation);
 //     console.log('Hello');
 //     id = setTimeout(log, 500);
 // }, 500);
+
+
+const now = new Date('2021-07-13');
+// new Date.parse('2021-07-13');
+
+// console.log(now.getFullYear());
+// console.log(now.getMonth());
+// console.log(now.getDate());
+// console.log(now.getDay());
+// console.log(now.getUTCHours());
+// console.log(now.getHours());
+
+// console.log(now.getTimezoneOffset());
+// console.log(now.getTime());
+
+console.log(now.setHours(18, 40));
+console.log(now);
+
+let start = new Date();
+
+for (let i = 0; i < 100000; i++) {
+    let some = i **3;
+}
+
+let end = new Date();
+console.log(`Цикл отработал за ${end - start} милисекунд`);
