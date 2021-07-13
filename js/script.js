@@ -81,7 +81,7 @@
 // }, 500);
 
 
-const now = new Date('2021-07-13');
+// const now = new Date('2021-07-13');
 // new Date.parse('2021-07-13');
 
 // console.log(now.getFullYear());
@@ -94,14 +94,14 @@ const now = new Date('2021-07-13');
 // console.log(now.getTimezoneOffset());
 // console.log(now.getTime());
 
-console.log(now.setHours(18, 40));
-console.log(now);
+// console.log(now.setHours(18, 40));
+// console.log(now);
 
-let start = new Date();
+// let start = new Date();
 
-for (let i = 0; i < 100000; i++) {
-    let some = i **3;
-}
+// for (let i = 0; i < 100000; i++) {
+//     let some = i **3;
+// }
 
-let end = new Date();
-console.log(`Цикл отработал за ${end - start} милисекунд`);
+// let end = new Date();
+// console.log(`Цикл отработал за ${end - start} милисекунд`);
