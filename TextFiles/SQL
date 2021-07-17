@@ -1,0 +1,34 @@
+* SQL is a language used for interacting with Relational Database Management Systems (RDBMS)
+
+    - SQL can be used for:
+            1) Create, retrieve, update and delete data 
+            2) Create & manage databases
+            3) Design & create database tables
+            4) Perform administration tasks (security, user management, import/export, etc.)
+
+    - SQL implementations vary between systems
+            1) Not all RDBMS follo the SQL standart to a 'T'
+            2) The concepts are the same but the implementations may vary
+
+    - SQL is actually a hybrid language, it's basically 4 types of languages in one 
+            1) Data Query Language (DQL)
+                * Used to query databases for information.
+                * Get information that is already stored there. 
+            2) Data Defenition Language (DDL)
+                * Used for defining databases schemas.
+            3) Data Control Language (DCL)
+                * Used for controlling the access to the data in the database.
+                * User & Permissions management.  
+            4) Data Manipulation Languagge (DML)
+                * Used for inserting, updating and deleting data from the databases. 
+
+* QUERIES 
+
+    - A query is a set of instructions given to the RDBMS (written in SQL) thath tell the RDBMS what information you want it to retrieve for you 
+            1) Tons of data in a DB 
+            2) Often hidden in a comples schema 
+            3) Goal is to only get the data you need  
+
+* Working
+
+    - to create a database type "create database name;"
