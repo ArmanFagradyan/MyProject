@@ -1261,3 +1261,28 @@ ________________________________________________________________________________
 
 Полезные ссылки: 
     1) Функции-конструкторы: https://learn.javascript.ru/constructor-new
+
+    * Создаем функцию-консруктор, с помощью new мы создаем уже не функцию, а создаем объект с указанными свойствами,
+    с помощью prototype мы можем добавлять новые методы или свойства в наш конструктор и они будут прототипно наследоваться
+    у потомков, это используется когда у нас нет доступа к прототипу или нам нельзя его менять по каким-то причинам.  
+
+            function User(name, id) {
+                this.name = name;
+                this.id = id;
+                this.human = true;
+                this.hello = function() {
+                    console.log(`Hello ${this.name}`);
+                };
+            }
+
+            User.prototype.exit = function(name) {
+                console.log(`User ${this.name} left`);
+            };
+
+            const ivan = new User('Ivan', 28);
+            const alex = new User('Alex', 20);
+
+            ivan.exit();
+
+            ivan.hello();
+            alex.hello();

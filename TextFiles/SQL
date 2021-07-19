@@ -29,6 +29,16 @@
             2) Often hidden in a comples schema 
             3) Goal is to only get the data you need  
 
-* Working
+* Working (MySQL)
 
     - to create a database type "create database name;"
+    - main Datatypes:
+        * INT   -- Whole numbers
+        * DECIMAL(M, N)    -- Decimal numbers (M - number of digits, N - digits after ',')
+        * VARCHAR(1)   -- String of text of length 1
+        * BLOB    -- Binary large object, Stores large data 
+        * DATE    -- 'YYYY-MM-DD'
+        * TIMESTAMP    -- 'YYYY-MM-DD HH:MM:SS'
+
+    - creating tables
+        * 
