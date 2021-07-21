@@ -41,4 +41,43 @@
         * TIMESTAMP    -- 'YYYY-MM-DD HH:MM:SS'
 
     - creating tables
-        * 
+        * In here we create a new table, set our main column names (in the begining we should build our table` schema), 
+        set the primary key, DESCRIBE command shows the description of our new table.
+
+            CREATE TABLE student (
+                student_id INT,
+                name VARCHAR(20),
+                major VARCHAR(20),
+                PRIMARY KEY(student_id)
+            );
+
+            DESCRIBE student;
+
+            DROP TABLE stud;
+
+            ALTER TABLE student ADD gpa DECIMAL(3, 2);
+
+            ALTER TABLE student DROP COLUMN gpa;
+
+    - To delete the table we use command DROP TABLE 'table_name';.
+
+    - To change the table we use command ALTER TABLE 'table_name', then to add a column use ADD 'column_name' 'coloumn datatype';, also
+    we can work with the specific column as in the example.
+
+* Inserting data into the database table.
+
+    - Here we are inserting sertain values into the student table in the order that are our columns created.
+
+            CREATE TABLE student (
+                student_id INT,
+                name VARCHAR(20),
+                major VARCHAR(20),
+                PRIMARY KEY(student_id)
+            );
+            SELECT * FROM student; 
+
+            INSERT INTO student VALUES(1, 'Jack', 'Biology');
+            INSERT INTO student VALUES(2, 'Kate', 'Sociology');
+            INSERT INTO student(student_id, name) VALUES(3, 'Claire');
+
+    - To view our existing table use command SELECT * FROM 'table_name';. 

@@ -106,8 +106,7 @@
 // let end = new Date();
 // console.log(`Цикл отработал за ${end - start} милисекунд`);
 
-const num = new Function(3);
-console.log(num);
+
 
 function User(name, id) {
     this.name = name;
