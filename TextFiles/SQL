@@ -116,5 +116,28 @@
             DELETE FROM student;
             WHERE student_id = 5;
 
+* Basic Queries 
     
-    
+    - '*' tells to select every columns in the table, but thats not mandatory, also we can order the selection (DESC for descending order),
+    also with WHERE condition we can use <, >, <=, >=, <>, AND, OR, also we can use IN as in the example below.
+
+            SELECT * FROM student; 
+
+            SELECT name, major FROM student ORDER BY name DESC;
+
+            SELECT *
+            FROM student
+            ORDER BY student_id DESC
+            LIMIT 5;
+
+            SELECT *
+            FROM student
+            WHERE major = 'Biology';
+
+            SELECT name, major
+            FROM student
+            WHERE major <> 'Chemistry';
+
+            SELECT *
+            FROM student
+            WHERE name IN ('Claire', 'Kate', 'Mike');
