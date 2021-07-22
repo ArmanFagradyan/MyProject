@@ -144,7 +144,7 @@
 
 * Company Database Intro 
     - We are creating a tables for company database look at 'Company Database.png'
-    
+
             CREATE TABLE employee(
                 emp_id INT PRIMARY KEY,
                 first_name VARCHAR(40),
@@ -264,3 +264,40 @@
             INSERT INTO works_with VALUES(107, 405, 26000);
             INSERT INTO works_with VALUES(102, 406, 15000);
             INSERT INTO works_with VALUES(105, 406, 130000);
+
+* More basic Queries
+
+-- Find all employees
+    SELECT * 
+    FROM employee;
+
+--Find all clients
+    SELECT *
+    FROM client;
+
+--Find all employees ordered by salary
+    SELECT *
+    FROM employee ORDER BY salary DESC;
+
+--Find all employess ordered by sex then name
+    SELECT *
+    FROM employee ORDER BY sex, first_name, last_name;
+
+--Find the first 5 employees in the table
+    SELECT *
+    FROM employee
+    LIMIT 5;
+
+--Find the first and last names of employees
+    SELECT first_name, last_name
+    FROM employee;
+
+--Find the forenames and surnames (renamed first and lastnames) of all employees
+    SELECT first_name AS forename, last_name AS surname 
+    FROM employee;
+
+--Find out all the different genders (show all the different sexes but only once)
+    SELECT DISTINCT sex
+    FROM employee;
+
+
