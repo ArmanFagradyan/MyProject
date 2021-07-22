@@ -342,3 +342,27 @@
         SELECT SUM(total_sales), client_id
         FROM works_with
         GROUP BY client_id;
+
+* Wildcards
+    - Wildcards - is a way of defining different patterns that we want match specific data to. 
+    - % = any numver of characters, _ = one character
+
+    --Find any clients who are an LLC 
+    SELECT *
+    FROM client 
+    WHERE client_name LIKE '%LLC'; -- If client name is like {any number of characters} + LLC the...
+
+    --Find any branch suppliers that are in the label business
+    SELECT *
+    FROM branch_supplier
+    WHERE supplier_name LIKE '%Label%';
+
+    --Find an employee born in october
+    SELECT *
+    FROM employee
+    WHERE birth_date LIKE '____-10%';
+
+    --Find any clients who are schools
+    SELECt *
+    FROM client
+    WHERE client_name LIKE '%school%';
