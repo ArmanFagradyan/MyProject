@@ -70,8 +70,8 @@
 
             CREATE TABLE student (
                 student_id INT,
-                name VARCHAR(20),
-                major VARCHAR(20),
+                name VARCHAR(20) NOT NULL,
+                major VARCHAR(20) UNIQUE,
                 PRIMARY KEY(student_id)
             );
             SELECT * FROM student; 
@@ -79,5 +79,42 @@
             INSERT INTO student VALUES(1, 'Jack', 'Biology');
             INSERT INTO student VALUES(2, 'Kate', 'Sociology');
             INSERT INTO student(student_id, name) VALUES(3, 'Claire');
+            INSERT INTO student VALUES(4, 'Jack', 'Biology');
+            INSERT INTO student VALUES(5, 'Mike', 'Computer Science');
 
     - To view our existing table use command SELECT * FROM 'table_name';. 
+    - We can use constraint NOT NULL as in the example, to define that a particular column can't be a NULL.
+    - We can use constraint UNIQUE as in the example, to define that the value of this column has to be unique in every row.
+    - We can use constraint DEFAULT 'text' as in the example, to define the default value when nothing is stated.
+
+    - We can use constraint AUTO_INCREMENT to the primary key as in the example, in order to not set them manualy
+
+            CREATE TABLE student (
+                student_id INT AUTO_INCREMENT,
+                name VARCHAR(20), 
+                major VARCHAR(20) DEFAULT 'undesided',
+                PRIMARY KEY(student_id)
+            );
+            SELECT * FROM student; 
+
+            INSERT INTO student(name, major) VALUES('Jack', 'Biology');
+            INSERT INTO student(name, major) VALUES('Kate', 'Sociology');
+
+* Updating and Deleting rows in the table.
+
+    - We use command UPDATE to update the information in the table, in this example we changed major name 'Biology' to 'Bio'.
+    - Without WHERE the command will apply to every row.
+            UPDATE student 
+            SET major = 'Bio'
+            WHERE major = 'Biology'
+
+            UPDATE student
+            SET major = 'Biochemistry'
+            WHERE major = 'Bio' OR major = 'Chemistry';
+
+    - Here we use command DELETE to delete column that satisfy the condition.
+            DELETE FROM student;
+            WHERE student_id = 5;
+
+    
+    
