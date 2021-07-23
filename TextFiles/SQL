@@ -348,21 +348,86 @@
     - % = any numver of characters, _ = one character
 
     --Find any clients who are an LLC 
-    SELECT *
-    FROM client 
-    WHERE client_name LIKE '%LLC'; -- If client name is like {any number of characters} + LLC the...
+        SELECT *
+        FROM client 
+        WHERE client_name LIKE '%LLC'; -- If client name is like {any number of characters} + LLC the...
 
     --Find any branch suppliers that are in the label business
-    SELECT *
-    FROM branch_supplier
-    WHERE supplier_name LIKE '%Label%';
+        SELECT *
+        FROM branch_supplier
+        WHERE supplier_name LIKE '%Label%';
 
     --Find an employee born in october
-    SELECT *
-    FROM employee
-    WHERE birth_date LIKE '____-10%';
+        SELECT *
+        FROM employee
+        WHERE birth_date LIKE '____-10%';
 
     --Find any clients who are schools
-    SELECt *
-    FROM client
-    WHERE client_name LIKE '%school%';
+        SELECt *
+        FROM client
+        WHERE client_name LIKE '%school%';
+
+* Union
+    - Unioin is a special SQL operator which we can use to combine the results of multipal SELECt statements into one.
+
+    --Find a list if employee and branch names
+    --Rules: same amount of columns, same datatype
+        SELECT first_name AS Company_names
+        FROM employee
+        UNION
+        SELECT branch_name
+        FROM branch;
+
+    --Find a list of all clients & branch suppliers names
+        SELECT client_name, branch_id
+        FROM client
+        UNION
+        SELECT supplier_name, branch_id
+        FROM branch_supplier;
+
+    --Find a list of all money spent or earned by the company
+        SELECt salary
+        FROM employee
+        UNION
+        SELECT total_sales
+        FROM works_with; 
+
+* Joins
+    - Used to combine rows from to or more tables based on a related column between them 
+
+    --Find all branches and the names of their managers
+    --There is also command LEFT JOIN and RIGHT JOIN to show not matching parts of one of the table
+        SELECT employee.emp_id, employee.first_name, branch.branch_name
+        FROM employee
+        JOIN branch
+        ON employee.emp_id = branch.mgr_id;
+
+* Nested Queries
+    - Is a query with multiple SELECT statements
+
+    --Find names of all employees who have sold over 30,000 to a single client
+        SELECT employee.first_name, employee.last_name
+        FROM employee
+        WHERE employee.emp_id IN (
+            SELECT works_with.emp_id
+            FROM works_with
+            WHERE works_with.total_sales > 30000
+        );
+
+    --Find all client who are handled by the branch that Michael Scott manages (Assume we know Michaels id)
+        SELECT client.client_name
+        FROM client
+        WHERE client.branch_id = (
+            SELECT branch.branch_id
+            FROM branch
+            WHERE branch.mgr_id = 102
+            LIMIT 1
+        );
+
+* On Delete 
+
+    - ON DELETE SET NULL - when we delete it sets to NULL in related tables
+    - ON DELETE CASCADE - when we delete it deletes rows in related tables (use when deleted value is primary key in any table)
+
+* Triggers
+    - Is a block of SQL code which we can write to define the certain action that should happen when certain operation gets performed
