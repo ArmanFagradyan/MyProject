@@ -460,3 +460,22 @@
             END$$
         DELIMITER ;
 
+* ER Diagrams Intro 
+
+    - Entity - an object we want to model & store information about 
+    - Atributes - specific pieces of information about an entity 
+    - Primary Key - an attribute(s) that uinquely identify an entry in the database table 
+    - Composite Attribute - an attribute that can be broken up into sub-attributes 
+    - Multi-values Attribute - an attribute that can have more than one value 
+    - Derived Attribute - an attribute that can be derived from other attributes 
+    - Multiple Entities - you can define more than one entity in the diagram 
+    - Relationships - defines a relationship between two entities 
+    - Total Participation - all members must participate in the relationship 
+    - Relationship Attribute - an attribute about the relationship 
+    - Relationsip Cardinality - the number of instances of an entity from a relation that can be associated with the relation
+    - Weak Entity - an entity that cannot be uniquely indentified by its atributes alone
+    - Identifying relationship - a relationship that serves to uniquely identify the weak entity 
+
+
+
+
