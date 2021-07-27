@@ -431,3 +431,32 @@
 
 * Triggers
     - Is a block of SQL code which we can write to define the certain action that should happen when certain operation gets performed
+
+        CREATE TABLE trigger_test (
+            message VARCHAR(100)
+        );
+
+        DELIMITER $$ -- Is like ;, so $$ is now a delimiter
+        CREATE
+            TRIGGER my_trigger BEFORE INSERT 
+            ON employee
+            FOR EACH ROW BEGIN
+                INSERT INTO trigger_test VALUES(NEW.first_name);
+            END $$
+        DELIMITER ;
+
+        DELIMITER $$
+        CREATE
+            TRIGGER my_trigger BEFORE INSERT -- BEFORE or AFTER, INSERT or DELETE or UPDATE
+            ON employee
+            FOR EACH ROW BEGIN 
+                IF NEW.sex = 'M' THEN 
+                    INSERT INTO trigger_test VALUES('added male employee');
+                ELSEIF NEW.sex = 'F' THEN
+                    INSERT INTO trigger_test VALUES('added female employee');
+                ELSE 
+                    INSERT INTO trigger_test VALUES('added other employee');
+                END IF;
+            END$$
+        DELIMITER ;
+
