@@ -217,3 +217,16 @@
 
 // console.log(long.calcArea());
 // console.log(square.calcArea());
+
+const log = function(a, b, ...rest) {
+    console.log(a, b, rest);
+};
+
+log('basic', 'rest', 'operator', 'usage' );
+
+function calcOrDouble(number, basis = 2) {  // Приравниваем аргумент в условии, чтобы задать параметр по умолчанию
+    basis = basis || 2; // Запишется 2 если аргумента нет, это старый способ и больше не используется см выше
+    console.log(number * basis);
+}
+calcOrDouble(3, 5);
+
