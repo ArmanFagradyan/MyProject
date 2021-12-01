@@ -1444,8 +1444,57 @@ ________________________________________________________________________________
 ___________________________________________________________________________________________________________________________________________________________________________
 /// JSON формат передачи данных, глубокое клонирование объектов
 
+* Маленький вес и простота чтения (почему JSON)
+
 Полезные ссылки: 
     1) Клонирование объектов: https://medium.com/@stasonmars/копирование-объектов-в-javascript-d25c261a7aff
     2) HTTP: https://ru.wikipedia.org/wiki/HTTP
     3) JSON: https://ru.wikipedia.org/wiki/JSON
+    
+
+    * Передаем на сервер объект в JSON формате
+        const person = {
+            name: 'Alex',
+            tel: '+75555555555'
+        };
+
+        console.log(JSON.stringify(person));
+
+    * Получаем с сервер объект в JSON формате и преобразуем в обычный
+        const person = {
+            name: 'Alex',
+            tel: '+75555555555'
+        };
+
+        console.log(JSON.parse(JSON.stringify(person)));
+
+    * Пример глубокого клонирования
+        const person = {
+            name: 'Alex',
+            tel: '+75555555555',
+            parents: {
+                mom: 'Hina',
+                dad: 'Mike'
+            }
+        };
+
+        const clone = JSON.parse(JSON.stringify(person));
+        clone.parents.mom = 'Yumiko';
+        console.log(person);
+        console.log(clone);
+
+        \\output\\
+            {
+            name: 'Alex',
+            tel: '+75555555555',
+            parents: { mom: 'Hina', dad: 'Mike' }
+            }
+            {
+            name: 'Alex',
+            tel: '+75555555555',
+            parents: { mom: 'Yumiko', dad: 'Mike' }
+            }
+
+
+
     
