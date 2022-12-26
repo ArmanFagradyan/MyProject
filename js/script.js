@@ -231,16 +231,17 @@
 // calcOrDouble(3, 5);
 
 
-const person = {
-    name: 'Alex',
-    tel: '+75555555555',
-    parents: {
-        mom: 'Hina',
-        dad: 'Mike'
-    }
-};
+// const person = {
+//     name: 'Alex',
+//     tel: '+75555555555',
+//     parents: {
+//         mom: 'Hina',
+//         dad: 'Mike'
+//     }
+// };
 
-const clone = JSON.parse(JSON.stringify(person));
-clone.parents.mom = 'Yumiko';
-console.log(person);
-console.log(clone);
+// const clone = JSON.parse(JSON.stringify(person));
+// clone.parents.mom = 'Yumiko';
+// console.log(person);
+// console.log(clone);
+
