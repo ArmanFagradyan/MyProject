@@ -341,8 +341,176 @@ ________________________________________________________________________________
 ____________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________
-///
+/// События в React, вспоминаем this
 
+Для того чтобы назначить обработчик события в реакте, мы должны прописать событие в качестве аргумента в формате camelCase (Пример: onClick в <button>). В примере ниже мы добавляем обработчик события onInput и мы хотим, чтобы при введении каких=то символов в input они попадали в состояние, т.е. учитывались внутри компонента и выводились в верстку. В реакте change и input работают абсолютно одинакого, поэтому чаще всего используем onChange. Для отмены стандарного поведения браузера можно использовать только event prevent default. addEventListener в react не нужно использовать.
+
+Когда мы передаем метод в обработчик события, мы всегда вначале прописываем this для указания экземпляра класса, все тоже самое происходит и для пропсов и для стейтов, когда мы указываем, что работаем с конкретным экземпляром класса. С обработчиками события все немного сложнее, когда событие срабатывает, то контекст теряется, это происходит потому что функция вызывается внутри другого метода/функции и this становится undefined. Например, если в функции nextYear убрать стрелочную функцию и сделать ее обычной, то выйдет ошибка, потому что функция setState вызывается вунтри nextYear, nextYear вызывается внутри render и в итоге контекст теряется, есть три способа решения этой проблемы (см. после первого примера)ю
+
+
+                import { Component } from 'react';
+
+                ...
+
+                class WhoAmI extends Component {
+                    constructor(props) {
+                        super(props);
+                        this.state = {
+                            years: 27,
+                            position: ''
+                        }
+                    }
+
+                    nextYear = () => {
+                        this.setState(state => ({  // Если выделить саму функцию круглыми скобками, то это будет аналогично записи с использ. return
+                            years: state.years + 1 
+                        }))
+                    }
+
+                    commitInputChanges = (e) => {
+                        console.log(e.target.value); // Т.о. можем узнать у объекта события на каком элементе произошло это событие и его значение. 
+                        this.setState({
+                            position: e.target.value
+                        })
+                    }
+
+                    render() {
+                        const {name, surname, link} = this.props;
+                        const {position, years} = this.state;
+                        return (
+                            <div>
+                            <button onClick={this.nextYear}>+++</button> 
+                                <h1>My name is {name}, surname - {surname}, 
+                                    age - {years}, 
+                                    position - {position} </h1>
+                                <a href={link}>My Profile</a>
+                                <form>
+                                    <span>Введите должность</span>
+                                    <input type="text" onChange={this.commitInputChanges}/>
+                                </form>
+                            </div>
+                        )
+                    }
+                }
+                ...
+
+* Первый способ решения через конструкцию bind: 
+Смотрим в конструктор, слева обычное свойство, которое будет у экземпляра класса, справа идет обращение к этому методу и мы его биндим к конкретному экземпляру класса. Есть неудобство, что при увеличениее количества методов в классе их всех придется биндить, если они используются в обработчике событий.
+
+                ...
+
+                class WhoAmI extends Component {
+                    constructor(props) {
+                        super(props);
+                        this.state = {
+                            years: 27,
+                            position: ''
+                        }
+                        this.nextYear = this.nextYear.bind(this);
+                    }
+
+                    nextYear() {
+                        this.setState(state => ({
+                            years: state.years + 1 
+                        }))
+                    }
+
+* Второй способ решения через использование стрелочной функции (метод полей классов Class Fileds), как в первом примере.
+
+* Третий способ решения через использование анонимной стрелочной функции:
+Проблема может возникнуть из-за того, что каждый раз когда будет создаваться компонент, то будет создаваться callback и проблема начнется, если дальше этот колбэк будет передаваться в виде пропса. А если у компонента менятеся пропс, то это заставляет его заного перерисовываться -Ю теряется оптимизация.
+
+Когда вызывается setState то за ним всегда вызывается render, и изменяются только те элементы, которые нужно изменить.
+
+                ...
+
+                class WhoAmI extends Component {
+                    constructor(props) {
+                        super(props);
+                        this.state = {
+                            years: 27,
+                            position: ''
+                        }
+                    }
+
+                    nextYear() {
+                        this.setState(state => ({
+                            years: state.years + 1 
+                        }))
+                    }
+
+                    commitInputChanges = (e) => {
+                        console.log(e.target.value); 
+                        this.setState({
+                            position: e.target.value
+                        })
+                    }
+
+                    render() {
+                        const {name, surname, link} = this.props;
+                        const {position, years} = this.state;
+                        return (
+                            <div>
+                            <button onClick={() => this.nextYear()}>+++</button> // <<<<
+                                <h1>My name is {name}, surname - {surname}, 
+                                    age - {years}, 
+                                    position - {position} </h1>
+                                <a href={link}>My Profile</a>
+                                <form>
+                                    <span>Введите должность</span>
+                                    <input type="text" onChange={this.commitInputChanges}/>
+                                </form>
+                            </div>
+                        )
+                    }
+                    ...
+
+Рассмотрим использование аргументов в обработчиках событий:
+Далее пример прокидывания аргумента в обработчике событий.
+
+                ...
+
+                class WhoAmI extends Component {
+                    constructor(props) {
+                        super(props);
+                        this.state = {
+                            years: 27,
+                            position: ''
+                        }
+                    }
+
+                    nextYear = () => {
+                        this.setState(state => ({
+                            years: state.years + 1 
+                        }))
+                    }
+
+                    commitInputChanges = (e, color) => {  // <<<<
+                        console.log(e.target.value);
+                        console.log(color);
+                        this.setState({
+                            position: e.target.value
+                        })
+                    }
+
+                    render() {
+                        const {name, surname, link} = this.props;
+                        const {position, years} = this.state;
+                        return (
+                            <div>
+                            <button onClick={this.nextYear}>+++</button>
+                                <h1>My name is {name}, surname - {surname}, 
+                                    age - {years}, 
+                                    position - {position} </h1>
+                                <a href={link}>My Profile</a>
+                                <form>
+                                    <span>Введите должность</span>
+                                    <input type="text" onChange={(e) => this.commitInputChanges(e, 'some color')}/>  // <<<<
+                                </form>
+                            </div>
+                        )
+                    }
+                    ...
 ____________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________________
